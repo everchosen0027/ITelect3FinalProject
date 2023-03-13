@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentInfoController;
+use App\Http\Controllers\EnrolledSubjectsController;
+use App\Http\Controllers\GradesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/addstudent', [StudentInfoController::class, 'index']);
+Route::get('/addsubject', [EnrolledSubjectsController::class, 'index']);
+Route::get('/addgrade', [GradesController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
